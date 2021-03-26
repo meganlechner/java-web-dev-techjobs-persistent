@@ -23,14 +23,20 @@ public class SkillController {
     public String displayAllSkills(Model model){
         model.addAttribute("skills", "All Skills");
         model.addAttribute("skills", skillRepository.findAll());
-        return "index";
+        return "skills/index";
+    }
+
+    @GetMapping("add")
+    public String displayAddSkillsForm(Model model) {
+        model.addAttribute(new Skill());
+        return "skills/add";
     }
 
     @PostMapping("add")
-    public String processAddEmployerForm(@ModelAttribute @Valid Skill newSkill,
+    public String processAddSkillForm(@ModelAttribute @Valid Skill newSkill,
                                          Errors errors, Model model) {
         if (errors.hasErrors()) {
-            return "employers/add";
+            return "skills/add";
         }
 
         skillRepository.save(newSkill);

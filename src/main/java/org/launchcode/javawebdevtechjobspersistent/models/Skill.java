@@ -6,20 +6,20 @@ import javax.validation.constraints.NotBlank;
 @Entity
 public class Skill extends AbstractEntity {
 
-    @NotBlank(message = "Skill set cannot be blank")
-    private String skill;
+    @NotBlank(message = "Description set cannot be blank")
+    private String description;
 
-    public Skill(@NotBlank(message = "Skill set cannot be blank") String skill) {
-        this.skill = skill;
+    public Skill(@NotBlank(message = "Description set cannot be blank") String description) {
+        this.description = description;
     }
 
     public Skill() {};
 
-    public String getSkill() {
-        return skill;
+    public String getDescription() {
+        return description;
     }
 
-    public void setSkill(String skill) {
-        this.skill = skill;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
