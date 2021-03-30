@@ -7,3 +7,12 @@ table_schema = 'techjobs' and table_name = 'job';
 SELECT *
 FROM techjobs.employer
 WHERE (location = "Saint Louis");
+
+-- Part 3
+ALTER TABLE techjobs.job DROP COLUMN employer;
+
+-- Part 4
+SELECT name, description 
+FROM job_skills INNER JOIN skill
+ON skill.id = job_skills.skills_id
+ORDER BY name ASC;
